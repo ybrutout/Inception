@@ -9,4 +9,4 @@ RUN	apt install -y mariadb-server
 COPY tools/config.sh /tmp
 
 #Je vais devoir finir par la cmd ENTRYPOINT pour lancer les scripts qui feront la configurations du service pendant que le service tourne. 
-ENTRYPOINT ["sh", "/tmp/config.sh"]
+#ENTRYPOINT ["sh", "/tmp/config.sh"]
