@@ -1,9 +1,9 @@
 FROM debian:buster
 #J'ai pas mis le apt-get je sais pas 
-RUN apt update
-RUN apt upgrade -y
+RUN apt-get update
+RUN apt-get upgrade -y
 
-RUN	apt install -y mariadb-server
+RUN	apt-get install -y mariadb-server
 
 #je vais devoir copie des trucs (COPY)
 COPY tools/config.sh /tmp
