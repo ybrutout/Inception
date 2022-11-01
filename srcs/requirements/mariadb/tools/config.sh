@@ -14,7 +14,7 @@ if [ ! -d /var/lib/mysql/$MARIADB_DATABASE ]; then
 	#présent. touch va créer un document vide par définition. 
 	touch /var/run/mysqld/mysqlf.pid
 	#Peut être devoir créer le .sock requis dans le document.
-	touch /var/run/mysqld/mysqld.sock
+	#touch /var/run/mysqld/mysqld.sock
 
 	#Il faut créer la database et l'user mais pour cela il faut le faire directement à 
 	#l'intérieur de mariaDB 
@@ -45,7 +45,7 @@ else
 	#présent. touch va créer un document vide par définition. 
 	touch /var/run/mysqld/mysqlf.pid
 	#Peut être devoir créer le .sock requis dans le document.
-	touch /var/run/mysqld/mysqld.sock
+	#touch /var/run/mysqld/mysqld.sock
 fi
 
 chown -R mysql:mysql /var/run/mysqld
