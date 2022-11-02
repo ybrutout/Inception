@@ -6,7 +6,7 @@ stop:
 		sudo docker-compose -f ./srcs/docker-compose.yml down
 
 clean: stop
-		sudo docker system prune
+		sudo docker system prune -a -f
 
 
 run:
