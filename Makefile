@@ -2,9 +2,12 @@ NAME=inception
 
 all: clean run 
 
-clean:
-		@sudo docker-compose -f Inception/srcs/docker-compose.yml down
+stop:
+		sudo docker-compose -f Inception/srcs/docker-compose.yml down
+
+clean: stop
+		
 
 run:
-		@ mkdir -p /home/ybrutout/mariadb
-		@sudo docker-compose -f Inception/srcs/docker-compose.yml up
+		mkdir -p /home/ybrutout/mariadb
+		sudo docker-compose -f Inception/srcs/docker-compose.yml up
