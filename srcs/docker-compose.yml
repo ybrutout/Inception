@@ -12,7 +12,7 @@ services:
             interval: 30s
             timeout: 30s
             retries: 5
-        network: 
+        networks: 
             - inception_ntw
         ports:
             - 3306:3306
