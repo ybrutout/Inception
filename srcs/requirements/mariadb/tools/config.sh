@@ -1,8 +1,5 @@
 chown -R mysql:mysql /var/lib/mysql
 
-sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
-
 #Verification que le dossier que va utiliser la basse de donnée à bien été créé dans le bon
 #dossier. 
 if [ ! -d /var/lib/mysql/$MARIADB_DATABASE ]; then
