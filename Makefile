@@ -10,6 +10,5 @@ clean: stop
 
 
 run:
-		sudo docker-compose -f ./srcs/docker-compose.yml build
 		mkdir -p /home/ybrutout/mariadb
-		sudo docker-compose -f ./srcs/docker-compose.yml up
+		sudo docker-compose -f ./srcs/docker-compose.yml up --build
