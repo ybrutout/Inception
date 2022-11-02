@@ -11,13 +11,16 @@ services:
 			test: ["CMD", "mysqladmin", "ping", "-u", "$MARIADB_USER", "-p$MARIADB_PASSWORD"]
 			interval: 30s
 			timeout: 30s
-			retries: 3
+			retries: 5
 		network: 
 			- inception_ntw
+		ports:
+			- 3306:3306
 		restart: unless-stopped
 		volumes:
 			- mariadb-volume:/var/lib/mysql
 
+#Par défaut le réseau est créé par compose mais on le précise pour le sujet
 networks:
 	inception_ntw:
 
