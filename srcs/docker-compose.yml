@@ -28,7 +28,7 @@ volumes:
     mariadb-volume:
     driver: local
     driver_opts:
-        type: volume
         device: /home/ybrutout/data/mariadb
+        type: volume
         o: bind
 
