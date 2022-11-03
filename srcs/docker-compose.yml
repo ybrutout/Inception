@@ -22,7 +22,7 @@ services:
     wordpress:
         build: ./requirements/wordpress
         container_name: wordpress
-        depends:
+        depends_on:
             -mariadb
         env_file: .env
         #healtcheck
