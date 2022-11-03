@@ -23,13 +23,13 @@ services:
         build: ./requirements/wordpress
         container_name: wordpress
         depends_on:
-            -mariadb
+            - mariadb
         env_file: .env
         #healtcheck
         networks:
-            -inception_ntw
+            - inception_ntw
         ports:
-            -9000:9000
+            - 9000:9000
         restart: unless-stopped
        # volumes:
 
