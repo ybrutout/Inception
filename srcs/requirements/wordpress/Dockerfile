@@ -9,7 +9,7 @@ RUN apt-get install -y php7.3 php7.3-fpm php7.3-mysql curl
 #se feront à l'emplacement du [path] Si le path n'existe pas il le créera
 WORKDIR /tmp/wordpress/
 
-COPY tools/config.sh 
+COPY tools/config.sh .
 
 #Je ne sais pas pourquoi ils font ça
 RUN mkdir -p /run/php
