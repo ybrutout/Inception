@@ -34,6 +34,6 @@ RUN wp core download --allow-root
 
 RUN chown -R www-data:www-data /var/www/html
 
-ENTRYPOINT ["sh", "./tmp/wordpress/config.sh"]
+ENTRYPOINT ["sh", "/tmp/wordpress/config.sh"]
 
 
