@@ -25,7 +25,7 @@ RUN chmod +x wp-cli.phar
 #seulement par Wordpress.
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-WORKDIR /var/www/hyml/wordpress
+WORKDIR /var/www/html/wordpress
 
 #permet de télécharger les documents extra de wordpress 
 RUN wp core download --allow-root
