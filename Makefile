@@ -2,7 +2,7 @@ NAME=inception
 
 all: clean run
 
-start
+start:
 		sudo docker-compose -f ./srcs/docker-compose.yml start
 
 stop:
