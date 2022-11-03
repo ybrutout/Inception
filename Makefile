@@ -15,4 +15,5 @@ clean:
 
 run:
 		mkdir -p /home/ybrutout/mariadb
+		mkdir -p /home/ybrutout/wordpress
 		sudo docker-compose -f ./srcs/docker-compose.yml up --build
