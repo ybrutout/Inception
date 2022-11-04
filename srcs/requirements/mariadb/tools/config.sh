@@ -45,7 +45,8 @@ else
 	#présent. touch va créer un document vide par définition. 
 	touch /var/run/mysqld/mysqlf.pid
 	#Peut être devoir créer le .sock requis dans le document.
-	#touch /var/run/mysqld/mysqld.sock
+	touch /var/run/mysqld/mysqld.sock
+
 fi
 
 chown -R mysql:mysql /var/run/mysqld
