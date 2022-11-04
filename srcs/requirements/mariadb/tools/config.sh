@@ -23,11 +23,13 @@ if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
 	#3. Accorde tous les privilèges de la base de donné MARIADB_NAME à l'user MARIADB_USER
 	#4. Applique les changements faits. 
 	#J'ai pas mis de @localhost ou de '%' dans mon MARIADB_user voir si ça fonctionne 
-	mariadb -e "\
-	CREATE DATABASE $MARIADB_NAME;
-	CREATE USER '$MARIADB_USER' IDENTIFIED BY $MARIADB_PWD;
-	GRANT ALL PRIVILEGES ON $MARIADB_NAME.* TO '$MARIADB_USER';
-	FLUSH PRIVILEGES;"
+	# mariadb -e "\
+	# CREATE DATABASE $MARIADB_NAME;
+	# CREATE USER '$MARIADB_USER' IDENTIFIED BY $MARIADB_PWD;
+	# GRANT ALL PRIVILEGES ON $MARIADB_NAME.* TO '$MARIADB_USER';
+	# FLUSH PRIVILEGES;"
+
+	eval "echo \"$(cat /tmp/config.sql)\"" | mariadb -u root
 
 	#Il faut protéger le root de mysql car on veut que l'user créer précédemment ait accès 
 	#à la database créé mais pas à toutes les databases.
