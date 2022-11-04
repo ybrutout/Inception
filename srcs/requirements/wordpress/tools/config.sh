@@ -1,7 +1,7 @@
 #Je commence pas par mettre la même condition car j'ai l'impression que ça set le port mais moi je set 
 #ca dans le docker-compose (je crois) //TO DO
+grep -E "/etc/php/7.3/fpm/pool.d/www.conf" > /dev/null 2>&1
 
-echo "je commence ici ?"
 
 #Il faut changer le dossier de configuration mais à la place de le changer tout on va le supprimer 
 #pour en regénérant un avec nos valeurs
