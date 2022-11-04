@@ -1,6 +1,8 @@
 #Je commence pas par mettre la même condition car j'ai l'impression que ça set le port mais moi je set 
 #ca dans le docker-compose (je crois) //TO DO
 
+echo "je commence ici ?"
+
 #Il faut changer le dossier de configuration mais à la place de le changer tout on va le supprimer 
 #pour en regénérant un avec nos valeurs
 rm -rf /var/www/html/wordpress/wp-config.php
