@@ -2,7 +2,7 @@ chown -R mysql:mysql /var/lib/mysql
 
 #Verification que le dossier que va utiliser la basse de donnée à bien été créé dans le bon
 #dossier. 
-if [ ! -d /var/lib/mysql/$DATABASE_NAME ]; then
+if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
 	#On lance le service mysql mais en lui redéfinissant son directory
 	service mysql start --datadir=/var/lib/mysql
 
@@ -18,15 +18,15 @@ if [ ! -d /var/lib/mysql/$DATABASE_NAME ]; then
 
 	#Il faut créer la database et l'user mais pour cela il faut le faire directement à 
 	#l'intérieur de mariaDB 
-	#1. Crée une base de donnée qui aura le nom DATABASE_NAME;
-	#2. Crée un user DATABASE_USER qui aura comme mot de passe DATABASE_PWD
-	#3. Accorde tous les privilèges de la base de donné DATABASE_NAME à l'user DATABASE_USER
+	#1. Crée une base de donnée qui aura le nom MARIADB_NAME;
+	#2. Crée un user MARIADB_USER qui aura comme mot de passe MARIADB_PWD
+	#3. Accorde tous les privilèges de la base de donné MARIADB_NAME à l'user MARIADB_USER
 	#4. Applique les changements faits. 
-	#J'ai pas mis de @localhost ou de '%' dans mon database_user voir si ça fonctionne 
+	#J'ai pas mis de @localhost ou de '%' dans mon MARIADB_user voir si ça fonctionne 
 	mariadb -e "\
-	CREATE DATABASE $DATABASE_NAME;
-	CREATE USER $DATABASE_USER IDENTIFIED BY $DATABASE_PWD;
-	GRANT ALL PRIVILEGES ON $DATABASE_NAME.* TO $DATABASE_USER;
+	CREATE DATABASE $MARIADB_NAME;
+	CREATE USER $MARIADB_USER IDENTIFIED BY $MARIADB_PWD;
+	GRANT ALL PRIVILEGES ON $MARIADB_NAME.* TO $MARIADB_USER;
 	FLUSH PRIVILEGES;"
 
 	#Il faut protéger le root de mysql car on veut que l'user créer précédemment ait accès 

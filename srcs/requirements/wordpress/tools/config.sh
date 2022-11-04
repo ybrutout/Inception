@@ -3,7 +3,6 @@
 grep -E "listen = 9000" "/etc/php/7.3/fpm/pool.d/www.conf" > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
- 	echo "--Modifying configuration file"
 	# Replacing the listen part
 	 sed -i "s|.*listen = /run/php/php7.3-fpm.sock.*|listen = 9000|g" "/etc/php/7.3/fpm/pool.d/www.conf" 
 fi
@@ -11,10 +10,10 @@ fi
 #Il faut changer le dossier de configuration mais à la place de le changer tout on va le supprimer 
 #pour en regénérant un avec nos valeurs
 rm -rf /var/www/html/wordpress/wp-config.php
-wp config create --dbname=$DATABASE_NAME \
-		--dbuser=$DATABASE_USER \
-		--dbpass=$DATABASE_PWD \
-		--dbhost=$DATABASE_HOST \
+wp config create --dbname=$MARIADB_NAME \
+		--dbuser=$MARIADB_USER \
+		--dbpass=$MARIADB_PWD \
+		--dbhost=$MARIADB_HOST \
 		--path="/var/www/html/wordpress/" \
 		--allow-root \
 		--skip-check
