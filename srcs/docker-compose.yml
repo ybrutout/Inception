@@ -29,8 +29,8 @@ services:
         #healtcheck
         networks:
             - inception_ntw
-        ports:
-            - 9000:9000
+        #ports:
+         #   - 9000:9000
         restart: unless-stopped
        # volumes:
 
