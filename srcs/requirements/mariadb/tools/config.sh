@@ -37,7 +37,7 @@ if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
 
 	#Je sais pas Pourquoi on arrête le service donc à voir ou à essayer //TO DO
 	service mysql stop --datadir=/var/lib/mysql
-
+	echo "TRY"
 else
 	#On crée un dossier qui va être utiliser par le daemon (le daemon stock toutes les infos
 	#qui vont communiqué ensemble entre les sewrvices dans un même dossier)
