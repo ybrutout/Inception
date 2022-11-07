@@ -5,7 +5,7 @@ RUN apt-get upgrade -y
 
 RUN	apt-get install -y mariadb-server
 
-COPY ./tools/config.sql /tmp/config.sql
+# COPY ./tools/config.sql /tmp/config.sql
 
 #je vais devoir copie des trucs (COPY)
 COPY tools/config.sh /tmp

@@ -19,20 +19,20 @@ services:
         restart: unless-stopped
         volumes:
             - mariadb-volume:/var/lib/mysql
-    wordpress:
-        build: ./requirements/wordpress
-        container_name: wordpress
-        depends_on:
-            mariadb :
-                condition: service_healthy
-        env_file: .env
-        #healtcheck
-        networks:
-            - inception_ntw
-        ports:
-            - 9000:9000
-        restart: unless-stopped
-        # volumes:
+    # wordpress:
+    #     build: ./requirements/wordpress
+    #     container_name: wordpress
+    #     depends_on:
+    #         mariadb :
+    #             condition: service_healthy
+    #     env_file: .env
+    #     #healtcheck
+    #     networks:
+    #         - inception_ntw
+    #     ports:
+    #         - 9000:9000
+    #     restart: unless-stopped
+    #     # volumes:
 
 
 #Par défaut le réseau est créé par compose mais on le précise pour le sujet
