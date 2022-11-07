@@ -16,5 +16,5 @@ clean:
 
 
 run:
-		mkdir -p /home/ybrutout/mariadb
+		mkdir -p /home/ybrutout/data
 		sudo docker-compose -f ./srcs/docker-compose.yml up --build
