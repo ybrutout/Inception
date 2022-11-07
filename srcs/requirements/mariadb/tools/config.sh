@@ -1,8 +1,10 @@
 chown -R mysql:mysql /var/lib/mysql
 
+echo "Je passe ici non ?"
+
 #Verification que le dossier que va utiliser la basse de donnée à bien été créé dans le bon
 #dossier. 
-if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
+if [ ! /var/lib/mysql/$MARIADB_NAME ]; then
 	echo "ICI"
 	#On lance le service mysql mais en lui redéfinissant son directory
 	service mysql start --datadir=/var/lib/mysql
