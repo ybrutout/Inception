@@ -11,9 +11,9 @@ stop:
 clean:
 		sudo docker-compose -f ./srcs/docker-compose.yml down
 		sudo docker system prune -a -f
+		sudo rm -rf /home/ybrutout/data
 
 
 run:
 		mkdir -p /home/ybrutout/mariadb
-		mkdir -p /home/ybrutout/wordpress
 		sudo docker-compose -f ./srcs/docker-compose.yml up --build
