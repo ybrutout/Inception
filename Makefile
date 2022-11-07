@@ -1,6 +1,6 @@
 NAME=inception
 
-all: clean run
+all: fclean run
 
 start:
 		sudo docker-compose -f ./srcs/docker-compose.yml start
