@@ -20,7 +20,7 @@ fclean: clean
 run:
 		mkdir -p /home/ybrutout/data/mariadb
 		mkdir -p /home/ybrutout/data/wordpress
-		ifeq (! grep "127.0.0.1 ybrutout.42.fr" /etc/hosts)
+		ifeq (! (grep "127.0.0.1 ybrutout.42.fr" /etc/hosts))
 			echo "coucou"
 			chmod 777 /etc/hosts
 			echo "127.0.0.1 ybrutout.42.fr" >> /etc/hosts
