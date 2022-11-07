@@ -10,7 +10,7 @@ stop:
 
 clean:
 		sudo docker-compose -f ./srcs/docker-compose.yml down
-		sudo docker system prune -a -f
+		sudo docker system prune -a -f --volume
 
 fclean: clean
 		sudo rm -rf /home/ybrutout/data/
