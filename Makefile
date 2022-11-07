@@ -11,10 +11,10 @@ stop:
 clean:
 		sudo docker-compose -f ./srcs/docker-compose.yml down
 		sudo docker system prune -a -f
-		sudo rm -rf /home/ybrutout/data
+		sudo rm -rf /home/ybrutout/data/
 		sudo docker volume rm srcs_mariadb-volume
 
 
 run:
-		mkdir -p /home/ybrutout/data
+		mkdir -p /home/ybrutout/data/mariadb
 		sudo docker-compose -f ./srcs/docker-compose.yml up --build
