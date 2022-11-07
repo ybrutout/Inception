@@ -42,3 +42,4 @@ wp plugin update --all --allow-root
 
 #On va lancer Wordpress avec la fastCGI et qu'il tourne en arrière plan 
 php-fpm7.3 --nodaemonize
+echo "je veux voir si je passe ici"
