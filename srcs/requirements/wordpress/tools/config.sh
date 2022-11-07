@@ -40,6 +40,6 @@ fi
 #Moi j'ai pas update wordpress apres voir si ca crée des problemes //TO DO
 wp plugin update --all --allow-root
 
+echo "je veux voir si je passe ici"
 #On va lancer Wordpress avec la fastCGI et qu'il tourne en arrière plan 
 php-fpm7.3 --nodaemonize
-echo "je veux voir si je passe ici"
