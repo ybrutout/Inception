@@ -1,7 +1,5 @@
 chown -R mysql:mysql /var/lib/mysql
 
-echo "Je passe ici non ?"
-
 #Verification que le dossier que va utiliser la basse de donnée à bien été créé dans le bon
 #dossier. 
 if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
@@ -15,8 +13,6 @@ if [ ! -d /var/lib/mysql/$MARIADB_NAME ]; then
 	#Une fois les dossiers requis créer on va aussi s'assurer que les documents requis sont
 	#présent. touch va créer un document vide par définition. 
 	touch /var/run/mysqld/mysqlf.pid
-	#Peut être devoir créer le .sock requis dans le document.
-	touch /var/run/mysqld/mysqld.sock
 
 	#lance la configuration qui contient les commandes mysql pour créer l'user avec ces permissions
 	#pour wordpress
