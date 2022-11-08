@@ -15,7 +15,7 @@ services:
         networks: 
             - inception_ntw
         ports:
-           - 3306:3306
+           - "3306:3306"
         restart: unless-stopped
         volumes:
             - mariadb-volume:/var/lib/mysql
@@ -26,15 +26,27 @@ services:
             mariadb :
                 condition: service_healthy
         env_file: .env
-        #healtcheck
         networks:
             - inception_ntw
         ports:
-            - 9000:9000
+            - "9000:9000"
         restart: unless-stopped
-        # volumes:
+        volumes:
+            - wordpress-volume:/var/www/html
+    nginx:
+        build: ./requirements/nginx
+        container_name: nginx
+        depends_on:
+            - wordpress
+        networks:
+            - inception_ntw
+        ports:
+            - "443:443"
+        restart: unless-stopped
+        volumes:
+            - wordpress-volume:/var/www/html
 
-#hey
+
 
 #Par défaut le réseau est créé par compose mais on le précise pour le sujet
 networks:
@@ -47,4 +59,9 @@ volumes:
             device: /home/ybrutout/data/mariadb
             type: volume
             o: bind
-
+    wordpress-volume:
+        driver: local
+        driver_opts:
+        device: /home/ldelmas/data/wordpress
+        type: volume
+        o: bind
