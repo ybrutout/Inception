@@ -1,5 +1,3 @@
-NAME=inception
-
 all: clean run
 
 start:
@@ -23,3 +21,5 @@ run:
 		sudo chmod 777 /etc/hosts
 		echo "127.0.0.1 ybrutout.42.fr" >> /etc/hosts
 		sudo docker-compose -f ./srcs/docker-compose.yml up --build
+
+.PHONY: start stop clean fclean run all
