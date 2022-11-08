@@ -9,12 +9,12 @@ fi
 
 #Il faut changer le dossier de configuration mais à la place de le changer tout on va le supprimer 
 #pour en regénérant un avec nos valeurs
-rm -rf /var/www/html/wordpress/wp-config.php
+rm -rf /var/www/wordpress/wp-config.php
 wp config create --dbname=$MARIADB_NAME \
 		--dbuser=$MARIADB_USER \
 		--dbpass=$MARIADB_PWD \
 		--dbhost=$MARIADB_HOST \
-		--path="/var/www/html/wordpress/" \
+		--path="/var/www/wordpress/" \
 		--allow-root \
 		--skip-check
 
