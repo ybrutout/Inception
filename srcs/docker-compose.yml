@@ -62,6 +62,6 @@ volumes:
     wordpress-volume:
         driver: local
         driver_opts:
-        device: /home/ybrutout/data/wordpress
-        type: volume
-        o: bind
+            device: /home/ybrutout/data/wordpress
+            type: volume
+            o: bind
