@@ -27,12 +27,12 @@ RUN chmod +x wp-cli.phar
 #seulement par Wordpress.
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-WORKDIR /var/www/html/wordpress
+WORKDIR /var/www/wordpress
 
 #permet de télécharger les documents extra de wordpress 
 RUN wp core download --allow-root
 
-RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/wordpress
 
 ENTRYPOINT ["sh", "/tmp/wordpress/config.sh"]
 
