@@ -32,7 +32,7 @@ services:
             - "9000:9000"
         restart: unless-stopped
         volumes:
-            - wordpress-volume:/var/www/html
+            - wordpress-volume:/var/www/wordpress
     nginx:
         build: ./requirements/nginx
         container_name: nginx
@@ -44,7 +44,7 @@ services:
             - "443:443"
         restart: unless-stopped
         volumes:
-            - wordpress-volume:/var/www/html
+            - wordpress-volume:/var/www/wordpress
 
 
 

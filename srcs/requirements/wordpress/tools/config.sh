@@ -34,7 +34,7 @@ if ! wp core is-installed --allow-root; then
                                             --allow-root
 
     #J'essaye de télécharger un autre thèmes voir si ça fonctionne //TO DO
-    wp theme install Signify dark --activate --allow-root
+    wp theme install signify dark --activate --allow-root
 fi
 
 #Moi j'ai pas update wordpress apres voir si ca crée des problemes //TO DO
